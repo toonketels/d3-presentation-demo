@@ -1,3 +1,31 @@
 #container
   width: 700px
   margin: auto
+
+
+
+.tick line
+  fill: none
+  stroke-dasharray: 4, 4
+  stroke-width: 1
+  stroke: red
+  shape-rendering: crispEdges
+
+// Minor ticks
+line.tick
+  fill: none
+  stroke-dasharray: 4, 4
+  stroke-width: 1
+  stroke: grey
+  shape-rendering: crispEdges
+
+
+// Axis 
+// ************************************
+.axis
+  .domain
+    fill: none
+    stroke: red
+
+  &.x .domain
+    stroke: none

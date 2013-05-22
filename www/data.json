@@ -1,0 +1,48 @@
+[
+    {
+        "angular.js": 4156802466, 
+        "backbone.js": 1840673920, 
+        "batman.js": 1498833975, 
+        "ember.js": 1881206749, 
+        "knockout.js": 1209301740, 
+        "sammy.js": 1460819178, 
+        "spine.js": 157072324
+    },
+    {
+        "angular.js": 3453238948, 
+        "backbone.js": 2632679121, 
+        "batman.js": 754070725, 
+        "ember.js": 1287154978, 
+        "knockout.js": 760788772, 
+        "sammy.js": 226399186, 
+        "spine.js": 632695285
+    },
+    {
+        "angular.js": 1278842780, 
+        "backbone.js": 1704179657,
+        "batman.js": 1431631132, 
+        "ember.js": 329232192, 
+        "knockout.js": 1084077115, 
+        "sammy.js": 2366921665, 
+        "spine.js": 2952338129
+    },
+    {
+        "angular.js": 781667932, 
+        "backbone.js": 465368058, 
+        "batman.js": 3451034924, 
+        "ember.js": 3323903536, 
+        "knockout.js": 3472561483, 
+        "sammy.js": 3554532146, 
+        "spine.js": 2383352249
+    },
+    {
+        "angular.js": 4216556221, 
+        "backbone.js": 1142352833, 
+        "batman.js": 975284084, 
+        "ember.js": 2903173118, 
+        "knockout.js": 795849796, 
+        "sammy.js": 2491706032, 
+        "spine.js": 3710703850
+    }
+]
+

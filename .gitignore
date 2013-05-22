@@ -6,3 +6,4 @@
 
 # We don't want node modules
 /node_modules/
+NOTES.md

@@ -1,16 +1,12 @@
 (function(d3){
 
-  // Grab the data...
-  d3.csv('data.csv', function(er, data){
-    // Circulation sales groups
-    setupChart(data);
-    console.log(data);
-  });
 
+  var data = [10, 30, 65, 40];
+  setupChart(data);
 
   function setupChart(data) {
 
-    var max_overall = getOverallMax(data),
+    var max_overall = d3.max(data),
         margin = {top: 50, right: 20, bottom: 20, left: 100},
         canvas_d = {width: 700, height: 500},
         chart_d = {
@@ -26,6 +22,8 @@
         axis_x,
         axis_y;
 
+    console.log(data);
+
 
     /**
      * Scale functions...
@@ -35,7 +33,7 @@
         .range([0, chart_d.width]);
 
     y = d3.scale.ordinal()                                  // Return unique values
-        .domain( data.map(function(d){ return d['name'] }))
+        .domain( data.map(function(d, i) { return i; }) )
         .rangeBands([0, chart_d.height], 0.2);
 
     /**
@@ -45,8 +43,9 @@
         .scale(x)
         .orient('top')
         .ticks(5)
+        .tickSubdivide(1)
         .tickPadding(15)
-        .tickSize(30, 0, 0);
+        .tickSize(chart_d.height, chart_d.height, 0);
 
     axis_f_y = d3.svg.axis()
         .scale(y)
@@ -73,8 +72,7 @@
      */
     axis_x = chart.append('g')
         .attr('class', 'x axis')
-        //.attr( 'transform', 'translate(0, '+ chart_d.height +')' )
-        .attr( 'transform', 'translate(0, '+ 0 +')' )
+        .attr( 'transform', 'translate(0, '+ chart_d.height +')' )
         .call(axis_f_x);
     
     axis_y = chart.append('g')
@@ -93,27 +91,15 @@
       .enter().append('rect')
         .attr('x', 0 )
         .attr('width', 0)
-        .attr('y',  function(d,i) { return y( d['name'] ) })
+        .attr('y',  y)
         .attr('height', y.rangeBand())
       .transition()
         .duration(500)
-        .attr('width', function(d , i){ return x( +d['2013'] ) })
+        .attr('width', x)
 
 
 
   }
 
-
-  function getOverallMax(data) {
-    return d3.max(data, function(d, i) {
-      var key,
-          max = 0;
-
-      for(key in d) {
-        max = (key !== "name" && +d[key] > max) ? +d[key] : max;
-      }
-      return max;
-    }); 
-  }
 
 })(d3);
